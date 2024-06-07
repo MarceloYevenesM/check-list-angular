@@ -1,12 +1,13 @@
 <div class="row">
 
+  <div class="row">
+    <h2 class="col-12" class="title">Agregar nueva tarea</h2>
+  </div>
 
-  <h2>Agregar nueva tarea</h2>
-
-
-  <input type="text" value="" placeholder="Escriba su nueva tarea">
-
-  <button (click)="addTask('hola')">Agregar</button>
-
+  <div class="row pt-2">
+    <label class="title">Nombre</label>
+    <input type="text" value="" placeholder="Escriba su nueva tarea" class="col-6" (keyup.enter)="addTask()"
+    #txtTaskInput>
+  </div>
 
 </div>

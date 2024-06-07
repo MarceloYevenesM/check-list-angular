@@ -10,8 +10,12 @@ import { Task } from '../../interfaces/task.interfaces';
 export class HomePageComponent {
   constructor(private checkListService:CheckListService){}
 
-  get tasks(): Task[]{
+  get missingTask(): Task[]{
     return this.checkListService.missingTask;
+  }
+
+  get tasksPerformed(): Task[]{
+    return this.checkListService.tasksPerformed;
   }
 
 }

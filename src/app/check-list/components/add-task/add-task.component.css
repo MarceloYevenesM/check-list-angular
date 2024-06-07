@@ -1,0 +1,13 @@
+.title {
+  color: #FFFFFF;
+}
+
+input {
+  border: none;
+  margin-top: 8px;
+  text-decoration: none;
+  background-color: #CDE8E5;
+  border-radius: 8px;
+  border-color: #4D869C;
+  padding: 5px;
+}

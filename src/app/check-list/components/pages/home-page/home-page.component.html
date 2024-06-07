@@ -1,5 +1,20 @@
+<div class="row">
+  <div class="row p-5 d-flex justify-content-center">
+    <check-add-task></check-add-task>
+  </div>
 
 
-<check-add-task></check-add-task>
+  <div class="row p-3 d-flex justify-content-around">
+    <div class="col-5 card">
+      <h3 class="text-center title-card">Cosas por hacer</h3>
+      <check-task-list [tasks]="missingTask" class=" "></check-task-list>
+    </div>
 
-<check-task-list></check-task-list>
+    <div class="col-5 card">
+      <h3 class="text-center title-card">Tareas realizadas</h3>
+      <check-task-list [tasks]="tasksPerformed"></check-task-list>
+    </div>
+  </div>
+
+
+</div>

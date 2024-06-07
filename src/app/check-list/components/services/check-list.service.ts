@@ -1,19 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../interfaces/task.interfaces';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class CheckListService {
 
   /* Privado para evitar modificarlo en otro servicio o lugar que se use */
-  public missingTask: Task[] = [];
+  private tasks: Task[] = [];
 
   constructor() { }
 
-  saveTask(task: Task){
-    this.missingTask.unshift(task);
-    console.log(this.missingTask)
+  saveTask(task: Task): void {
+    this.tasks.unshift(task);
   }
 
+  /*  get missingTask */
+  get missingTask(): Task[] {
+    return this.tasks.filter((task) => task.state)
+  }
+
+
+  get tasksPerformed(): Task[] {
+    return this.tasks.filter((task) => !task.state)
+  }
 
 
 }

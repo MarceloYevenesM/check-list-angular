@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CheckListService } from '../services/check-list.service';
 import { Task } from '../interfaces/task.interfaces';
 
@@ -10,9 +10,13 @@ import { Task } from '../interfaces/task.interfaces';
 export class AddTaskComponent {
   constructor(private checkListService: CheckListService) { }
 
-  addTask(valueTask: string): void {
+  @ViewChild('txtTaskInput')
+  public tagInput!: ElementRef<HTMLInputElement>;
+
+  addTask(): void {
+    const newTask = this.tagInput.nativeElement.value;
     const task: Task = {
-      name: valueTask,
+      name: newTask,
       state: true,
     }
 

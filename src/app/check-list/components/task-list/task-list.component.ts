@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Task } from '../interfaces/task.interfaces';
 
 @Component({
   selector: 'check-task-list',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class TaskListComponent {
 
+  @Input()
+  public tasks: Task[] = [];
 }
+
